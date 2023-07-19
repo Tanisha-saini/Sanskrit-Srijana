@@ -1,18 +1,14 @@
 {
     "builds": [
       {
-        "src": "SanskritSrijanaIntern/app.py",
+        "src": "api/app.py",
         "use": "@vercel/python"
       }
     ],
     "routes": [
       {
         "src": "/(.*)",
-        "dest": "SanskritSrijanaIntern/app.py"
+        "dest": "api/app.py"
       }
-    ],
-    "name": "Sanskrit-Srijana",
-    "version": "2.2.0",
-    "framework": "flask",
-    "public": "public/static/"    
+    ]
   }
