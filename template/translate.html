@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <title>Translate your text</title>
+    <link rel="stylesheet" href="/static/translate.css">
+</head>
+<body>
+  <div id="loading">
+    <!-- <img id="loading-img" src="/static/Assets/loading.gif"> -->
+  </div>
+
+    <section class="landing">
+        <!-- Nav Bar -->
+        <nav>
+            <a href="{{url_for('index')}}"><img src="/static/Assets/Logo-landing.png" alt="logo"></a>
+            <ul class="menu-opt">
+                <a href="{{url_for('index')}}"><li>Home</li></a>
+                <a href="{{url_for('translate')}}"><li>Translate</li></a>
+                <a href="{{url_for('alphabets')}}"><li>Learn</li></a>
+                <a href="#contact"><li>Contact</li></a>
+            </ul>
+        </nav>
+    </section>
+
+    <h1 class="main">Translate your Text</h1>
+
+
+    <section class="hero">
+      <form class="buttons">
+          <input type="radio" id="englishToSanskritButton" name="translation" value="englishToSanskrit" checked>
+          <label for="englishToSanskritButton">English to Sanskrit</label>
+          <input type="radio" id="sanskritToEnglishButton" name="translation" value="sanskritToEnglish">
+          <label for="sanskritToEnglishButton">Sanskrit to English</label>
+      </form>
+
+      <div class="inner">
+        <div class="input-section">
+          <textarea id="inputText" class="inputText" placeholder="Hi, I am a translator. You can use me for your convenience"></textarea>
+        </div>
+        <div class="output-section">
+          <textarea id="outputText" class="outputText" placeholder="हाय, अहं अनुवादकः अस्मि। भवन्तः मां स्वसुविधायै उपयोक्तुं शक्नुवन्ति"></textarea>
+        </div>
+      </div>
+      <div class="translate-button">
+        <button class="btn">Translate</button>
+      </div>
+    </section>
+
+      <!-- Footer -->
+    <footer class="footer" id="contact">
+      <h3>Made by Tanisha Saini ✌️</h3>
+    </footer>
+
+    <script>
+      function showloading(){
+        document.querySelector("#loading").style.display="block";
+      }
+
+      function hideloading(){
+        document.querySelector("#loading").style.display="none";
+      }
+
+      const englishToSanskritButton = document.getElementById("englishToSanskritButton");
+      const sanskritToEnglishButton = document.getElementById("sanskritToEnglishButton"); 
+      let translateBtn = document.querySelector(".btn")
+
+      let englishSection = document.querySelector(".input-section");
+      let sanskritSection = document.querySelector(".output-section");
+
+      englishToSanskritButton.addEventListener("click",function(){
+        document.querySelector(".inner").style.flexDirection="row";
+      })
+
+      sanskritToEnglishButton.addEventListener("click",function(){
+        document.querySelector(".inner").style.flexDirection="row-reverse";
+      })
+
+      const mediaQuery = window.matchMedia("(max-width: 1200px)");
+      if (mediaQuery.matches) {
+        englishToSanskritButton.addEventListener("click",function(){
+          document.querySelector(".inner").style.flexDirection="column";
+        })
+
+        sanskritToEnglishButton.addEventListener("click",function(){
+          document.querySelector(".inner").style.flexDirection="column-reverse";
+
+        })
+      }
+
+      translateBtn.addEventListener("click", function (event) {
+
+        showloading();
+
+        if (englishToSanskritButton.checked) {
+          // Call the englishToSanskrit function.
+          let text  = document.querySelector(".inputText").value
+          let outputText = document.querySelector(".outputText")
+          event.preventDefault()
+          
+          fetch('/translate/'+ text, {
+              method: 'GET',
+          })
+          .then(response => response.json())
+          .then((data) => {
+              outputText.value = data['translatedData']
+              hideloading();
+          });
+        } 
+
+        else {
+          // Call the sanskritToEnglish function.
+          let text  = document.querySelector(".outputText").value
+          let inputText = document.querySelector(".inputText")
+          event.preventDefault()
+          
+          fetch('/translatetoen/'+ text, {
+              method: 'GET',
+          })
+          .then(response => response.json())
+          .then((data) => {
+              inputText.value = data['translatedData'];
+              hideloading();
+          });
+        }
+
+          
+      });
+
+    </script>
+
+</body>
+</html>

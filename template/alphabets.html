@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn</title>
+    <link rel="stylesheet" href="/static/alphabets.css">
+</head>
+<body>
+    <section class="landing">
+        <!-- Nav Bar -->
+        <nav>
+            <a href="{{url_for('index')}}"><img src="/static/Assets/Logo-landing.png" alt="logo"></a>
+            <ul class="menu-opt">
+                <a href="{{url_for('index')}}"><li>Home</li></a>
+                <a href="{{url_for('translate')}}"><li>Translate</li></a>
+                <a href="{{url_for('alphabets')}}"><li>Learn</li></a>
+                <a href="#contact"><li>Contact</li></a>
+            </ul>
+        </nav>
+    </section>
+
+    <h1 class="main-head">संस्कृत वर्णमाला</h1>
+    <section class="hero-section">
+        <h1 class="main">स्वर: (Vowels)</h1>
+        <section class="vowelAlphabets">
+            <!-- <div class="flip-card-wrapper">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="front-side">
+                            <h1 class="heading">अ</h1>
+                        </div>
+                        <div class="back-side">
+                            <img class="alphabet-img" src="/static/Assets/alphabets/1.png" alt="horse">
+                            <h3 class="word">अश्व (aśva)</h3>
+                            <h3 class="meaning">Horse</h3>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </section>
+
+        <h1 class="main">व्यंजन (Consonants)</h1>
+        <section class="consonantAlphabets">
+            <!-- <div class="flip-card-wrapper">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="front-side">
+                            <h1 class="heading">अ</h1>
+                        </div>
+                        <div class="back-side">
+                            <img class="alphabet-img" src="https://horseyhooves.com/wp-content/uploads/2022/08/Beautiful-horse-running-in-a-grassy-field.jpg" alt="horse">
+                            <h3 class="word">अश्व (aśva)</h3>
+                            <h3 class="meaning">Horse</h3>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </section>
+       
+    </section>
+
+    <footer class="footer" id="contact">
+        <h3>Made by Tanisha Saini ✌️</h3>
+    </footer>
+
+    <script>
+
+        const sanskritAlphabets = [
+            {
+                id: 1,
+                heading: 'अ',
+                word: 'अश्व: (aśva)',
+                meaning: 'Horse',
+            },
+            {
+                id: 2,
+                heading: 'आ',
+                word: 'आम्रस्य: (āmrasya)',
+                meaning: 'Mango',
+            },
+            {
+            id: 3,
+                heading: 'इ',
+                word: 'इन्दुर: (indura)',
+                meaning: 'Rat',
+            },
+            {
+            id: 4,
+                heading: 'ई',
+                word: 'ईश्वर: (īśvara',
+                meaning: 'God',
+            },
+            {
+            id: 5,
+                heading: 'उ',
+                word: 'उष्ट्र: (uṣṭra)',
+                meaning: 'Camel',
+            },
+            {
+            id: 6,
+                heading: 'ऊ',
+                word: ' ऊर्णा (ūrṇā)',
+                meaning: 'Wool',
+            },
+            {
+            id: 7,
+                heading: 'ऋ',
+                word: 'ऋतु: (ṛtu)',
+                meaning: 'Season',
+            },
+            {
+            id: 8,
+                heading: 'ए',
+                word: 'एक: (eka)',
+                meaning: 'One',
+            },
+            {
+            id: 9,
+                heading: 'ऐ',
+                word: ' ऐरावत: (airāvata)',
+                meaning: 'Elephant',
+            },
+            {
+            id: 10,
+                heading: 'ओ',
+                word: 'ओजस्: (ojas)',
+                meaning: 'Energy',
+            },
+            {
+            id: 11,
+                heading: 'औ',
+                word: 'औषधि: (auṣadhi)',
+                meaning: 'Medicine',
+            },
+            {
+            id: 12,
+                heading: 'क',
+                word: 'कवि (kavi)',
+                meaning: 'Poet',
+            },
+            {
+            id: 13,
+                heading: 'ख',
+                word: 'खग: (khaga)',
+                meaning: 'Bird',
+            },
+            {
+            id: 14,
+                heading: 'ग',
+                word: 'गज: (gaja)',
+                meaning: 'Elephant',
+            },
+            {
+            id: 15,
+                heading: 'घ',
+                word: 'घट: (ghaṭa)',
+                meaning: 'Pot',
+            },
+            {
+            id: 16,
+                heading: 'च',
+                word: 'चमस (Chamas)',
+                meaning: 'Spoon',
+            },
+            {
+            id: 17,
+                heading: 'छ',
+                word: 'छत्र: (chatra)',
+                meaning: 'Umbrella',
+            },
+            {
+            id: 18,
+                heading: 'ज',
+                word: 'जगत् (jagat)',
+                meaning: 'World',
+            },
+            {
+            id: 19,
+                heading: 'झ',
+                word: 'झुर्री (jhurrī)',
+                meaning: 'wrinkle',
+            },
+            {
+            id: 20,
+                heading: 'ट',
+                word: 'टंक (ṭanka)',
+                meaning: 'A coin',
+            },
+            {
+            id: 21,
+                heading: 'ठ',
+                word: 'ठंड: (ṭhand)',
+                meaning: 'Cold',
+            },
+            {
+            id: 22,
+                heading: 'ड',
+                word: 'डमरू: (ḍamarū)',
+                meaning: 'Drum',
+            },
+            {
+            id: 23,
+                heading: 'ढ',
+                word: 'ढाला (ḍhālā)',
+                meaning: 'Shield',
+            },
+            {
+            id: 24,
+                heading: 'ण',
+                word: 'नक्षत्र (nakṣatra)',
+                meaning: 'Star',
+            },    
+            {
+            id: 25,
+                heading: 'त',
+                word: 'तपस् (tapas)',
+                meaning: 'Meditation',
+            },    
+            {
+            id: 26,
+                heading: 'थ',
+                word: 'थल (thala)',
+                meaning: 'Plate',
+            },
+            {
+            id: 27,
+                heading: 'द',
+                word: 'देव (deva)',
+                meaning: 'God',
+            },
+            {
+            id: 28,
+                heading: 'ध',
+                word: 'धनुः (dhanuḥ)',
+                meaning: 'Bow',
+            },
+            {
+            id: 29,
+                heading: 'न',
+                word: 'नदी (nadī)',
+                meaning: 'River',
+            },
+            {
+            id: 30,
+                heading: 'प',
+                word: 'पुरुष (puruṣa)',
+                meaning: 'Man',
+            },
+            {
+            id: 31,
+                heading: 'फ',
+                word: 'फल: (phala)',
+                meaning: 'Fruit',
+            },
+            {
+            id: 32,
+                heading: 'ब',
+                word: 'बालक: (bālaka)',
+                meaning: 'Boy',
+            },
+            {
+            id: 33,
+                heading: 'भ',
+                word: 'भवन (bhavana)',
+                meaning: 'Mansion',
+            },
+            {
+            id: 34,
+                heading: 'म',
+                word: 'मातृ (mātṛ)',
+                meaning: 'Mother',
+            },
+            {
+            id: 35,
+                heading: 'य',
+                word:  'यन्त्र: (yantra)',
+                meaning: 'Machine',
+            },
+            {
+            id: 36,
+                heading: 'र',
+                word: 'राजा (rājā)',
+                meaning: 'King',
+            },
+            {
+            id: 37,
+                heading: 'ल',
+                word: 'लाभ (lābha)',
+                meaning: 'Profit',
+            },
+            {
+            id: 38,
+                heading: 'व',
+                word: 'वन: (vana)',
+                meaning: 'Forest',
+            },
+            {
+            id: 39,
+                heading: 'श',
+                word: 'शर्करा (śarkarā) ',
+                meaning: 'Sugar',
+            },
+            {
+            id: 40,
+                heading: 'ष',
+                word: 'षड्यन्त्र (ṣaḍyantra)',
+                meaning: 'Hexagon',
+            },
+            {
+            id: 41,
+                heading: 'स',
+                word: ' सर्प (sarpa)',
+                meaning: 'Snake',
+            },
+            {
+            id: 42,
+                heading: 'ह',
+                word: 'हस्त: (hasta)',
+                meaning: 'Hand',
+            },
+
+        ]
+
+        const getAlphabetsHTML = (data, i) => {
+            return(
+                `<div class="flip-card-wrapper">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="front-side">
+                            <h1 class="heading">${data.heading}</h1>
+                        </div>
+                        <div class="back-side">
+                            <img class="alphabet-img" src="/static/Assets/alphabets/${i+1}.png" alt="${data.meaning}">
+                            <h3 class="word">${data.word}</h3>
+                            <h3 class="meaning">${data.meaning}</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>`
+            )
+        }
+
+        var alphabets_section = document.querySelector(".vowelAlphabets");
+        for(let i = 0; i < 11; i++) {
+            alphabets_section.innerHTML += getAlphabetsHTML(sanskritAlphabets[i], i);
+        };
+
+        var alphabets_section = document.querySelector(".consonantAlphabets");
+        for(let i = 11; i < sanskritAlphabets.length; i++) {
+            alphabets_section.innerHTML += getAlphabetsHTML(sanskritAlphabets[i], i);
+        };
+
+    </script>
+
+</body>
+</html>
