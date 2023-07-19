@@ -11,5 +11,8 @@
         "dest": "SanskritSrijanaIntern/app.py"
       }
     ]
-    "public": "static/"
+    "name": "Sanskrit-Srijana",
+    "version": "2.2.0",
+    "framework": "flask",
+    "public": "public/static/"    
   }
