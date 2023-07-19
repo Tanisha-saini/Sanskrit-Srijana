@@ -14,5 +14,5 @@
     "name": "Sanskrit-Srijana",
     "version": "2.2.0",
     "framework": "flask",
-    "public": "public/static/"    
+    "public": "public/"    
   }
