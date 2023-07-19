@@ -11,5 +11,5 @@
         "dest": "SanskritSrijanaIntern/app.py"
       }
     ]
-    "public": "public/static"
+    "public": "public/static/"
   }
