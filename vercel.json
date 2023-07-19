@@ -1,14 +1,14 @@
 {
     "builds": [
         {
-            "src": "sanskrit-srijana/app.py",
+            "src": "SanskritSrijanaIntern/app.py",
             "use": "@vercel/python"
         }
     ],
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "sanskrit-srijana/app.py"
+            "dest": "SanskritSrijanaIntern/app.py"
         }
     ]
 }
