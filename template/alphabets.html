@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learn</title>
-    <link rel="stylesheet" href="/static/alphabets.css">
+    <link rel="stylesheet" href="/public/static/alphabets.css">
 </head>
 <body>
     <section class="landing">
         <!-- Nav Bar -->
         <nav>
-            <a href="{{url_for('index')}}"><img src="/static/Assets/Logo-landing.png" alt="logo"></a>
+            <a href="{{url_for('index')}}"><img src="/public/static/Assets/Logo-landing.png" alt="logo"></a>
             <ul class="menu-opt">
                 <a href="{{url_for('index')}}"><li>Home</li></a>
                 <a href="{{url_for('translate')}}"><li>Translate</li></a>
@@ -31,7 +31,7 @@
                             <h1 class="heading">अ</h1>
                         </div>
                         <div class="back-side">
-                            <img class="alphabet-img" src="/static/Assets/alphabets/1.png" alt="horse">
+                            <img class="alphabet-img" src="/public/static/Assets/alphabets/1.png" alt="horse">
                             <h3 class="word">अश्व (aśva)</h3>
                             <h3 class="meaning">Horse</h3>
                         </div>
@@ -331,7 +331,7 @@
                             <h1 class="heading">${data.heading}</h1>
                         </div>
                         <div class="back-side">
-                            <img class="alphabet-img" src="/static/Assets/alphabets/${i+1}.png" alt="${data.meaning}">
+                            <img class="alphabet-img" src="/public/static/Assets/alphabets/${i+1}.png" alt="${data.meaning}">
                             <h3 class="word">${data.word}</h3>
                             <h3 class="meaning">${data.meaning}</h3>
                         </div>

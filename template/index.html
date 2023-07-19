@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href='/static/style.css'>
+    <link rel="stylesheet" href='/public/static/style.css'>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
@@ -17,7 +17,7 @@
     <!-- First section of home page -->
     <div class="landing-grad">
         <nav>
-            <a href="{{url_for('index')}}"><img src="/static/Assets/Logo-landing.png" alt="logo"></a>
+            <a href="{{url_for('index')}}"><img src="/public/static/Assets/Logo-landing.png" alt="logo"></a>
             <ul class="menu-opt">
                 <a href="{{url_for('index')}}"><li>Home</li></a>
                 <a href="{{url_for('translate')}}"><li>Translate</li></a>
@@ -33,7 +33,7 @@
                 <a href="{{url_for('alphabets')}}"><button class="yellow-grad-button">Get started</button></a>
             </section>
         <!-- </section> -->
-        <img id="landing-img" src="/static/Assets/landing-img.png" alt="landing page image">
+        <img id="landing-img" src="/public/static/Assets/landing-img.png" alt="landing page image">
     </div>
 
     <!-- Second section of home page-->
@@ -42,27 +42,27 @@
         <!-- reasons -->
         <div class="reason-set">
             <div class="reason">
-                <img src="/static/Assets/reason1.png" alt="cup">
+                <img src="/public/static/Assets/reason1.png" alt="cup">
                 <h4>Connection to your heritage</h4>
                 <p>Connects you with your cultural heritage and learn more about your roots.</p>
             </div>
             <div class="reason">
-                <img src="/static/Assets/reason2.png" alt="cup">
+                <img src="/public/static/Assets/reason2.png" alt="cup">
                 <h4>A challenge</h4>
                 <p>Helps you improve your memory, concentration, and problem-solving skills.</p>
             </div>
             <div class="reason">
-                <img src="/static/Assets/reason3.png" alt="cup">
+                <img src="/public/static/Assets/reason3.png" alt="cup">
                 <h4>Repository Knowledge</h4>
                 <p>Contain a wealth of knowledge about philosophy, religion, and science.</p>
             </div>
             <div class="reason">
-                <img src="/static/Assets/reason4.png" alt="cup">
+                <img src="/public/static/Assets/reason4.png" alt="cup">
                 <h4>Gateway to other languages</h4>
                 <p>Modern Indian languages, such as Hindi, Bengali, and Marathi, are derived from Sanskrit.</p>
             </div>
             <div class="reason">
-                <img src="/static/Assets/reason5.png" alt="cup">
+                <img src="/public/static/Assets/reason5.png" alt="cup">
                 <h4>A beautiful and expressive language</h4>
                 <p>A joy to read and write, and isused to express a wide range of emotions and ideas.</p>
             </div>
@@ -76,14 +76,14 @@
         <div class="option-set">
             <a href="{{url_for('alphabets')}}">
                 <div class="option">
-                    <img src="/static/Assets/alphabets.jpg" alt="">
+                    <img src="/public/static/Assets/alphabets.jpg" alt="">
                     <h4>Learn Varnmala</h4>
                     <p>Lean the set of all the letters that are used to write Sanskrit. </p>
                 </div>
             </a>
             <a href="{{url_for('translate')}}">
                 <div class="option">
-                    <img src="/static/Assets/translate.png" alt="">
+                    <img src="/public/static/Assets/translate.png" alt="">
                     <h4>Translate your text</h4>
                     <p>Translate your words and phrases from English to Sanskrit and vice versa with our easy-to-use translation tool.</p>
                 </div>
